@@ -9,11 +9,12 @@
                         <p v-show="msg === 1">item-list2です</p>
                         <p v-show="msg === 2">item-list3です</p>
                         <p v-show="msg === 3">item-list4です</p>
-                        <ul>
+                        <ul v-show="msg === '何をしますか？'">
                             <li v-for="(item, index) in items" :key="index" @click="msg = index">
                                 {{ item.name }}
                             </li>
                         </ul>
+                        <a href="/home">back</a>
                     </div>
                 </div>
             </div>
