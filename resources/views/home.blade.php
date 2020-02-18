@@ -14,12 +14,6 @@
                         </div>
                     @endif
                     こんにちは、{{ Auth::user()->name }}さん
-                    <ul id="usermenu">
-                        <li><a href="#"> test </a></li>
-                        <li><a href="#"> test </a></li>
-                        <li><a href="#"> test </a></li>
-                        <li><a href="#"> test </a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -29,4 +23,5 @@
 <div id="app">
     <example-component></example-component>
 </div>
+<hr>
 @endsection
