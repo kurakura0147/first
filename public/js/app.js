@@ -1931,6 +1931,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37393,6 +37394,16 @@ var render = function() {
             _vm._v(" "),
             _c(
               "ul",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.msg === "何をしますか？",
+                    expression: "msg === '何をしますか？'"
+                  }
+                ]
+              },
               _vm._l(_vm.items, function(item, index) {
                 return _c(
                   "li",
@@ -37414,7 +37425,9 @@ var render = function() {
                 )
               }),
               0
-            )
+            ),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "/home" } }, [_vm._v("back")])
           ])
         ])
       ])
