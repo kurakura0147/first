@@ -1932,18 +1932,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       msg: "何をしますか？",
-      items: [{
-        name: "item-list1"
-      }, {
-        name: "item-list2"
-      }, {
-        name: "item-list3"
-      }, {
-        name: "item-list4"
+      MenuName: "",
+      items: [// ユーザー詳細から編集できるようにする
+      {
+        name: "ユーザー情報詳細"
+      }, // 入力時にリアルタイム表示。確認画面の表示
+      {
+        name: "新規投稿"
+      }, // ログインユーザーで絞り込み一覧表示
+      {
+        name: "投稿内容確認"
+      }, // 投稿内容から詳細画面に飛ばす
+      {
+        name: "他ユーザー投稿確認"
       }]
     };
   },
@@ -37333,7 +37339,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c(
-              "p",
+              "div",
               {
                 directives: [
                   {
@@ -37344,11 +37350,11 @@ var render = function() {
                   }
                 ]
               },
-              [_vm._v("item-list1です")]
+              [_vm._v(_vm._s(_vm.MenuName))]
             ),
             _vm._v(" "),
             _c(
-              "p",
+              "div",
               {
                 directives: [
                   {
@@ -37359,11 +37365,11 @@ var render = function() {
                   }
                 ]
               },
-              [_vm._v("item-list2です")]
+              [_vm._v(_vm._s(_vm.MenuName))]
             ),
             _vm._v(" "),
             _c(
-              "p",
+              "div",
               {
                 directives: [
                   {
@@ -37374,11 +37380,11 @@ var render = function() {
                   }
                 ]
               },
-              [_vm._v("item-list3です")]
+              [_vm._v(_vm._s(_vm.MenuName))]
             ),
             _vm._v(" "),
             _c(
-              "p",
+              "div",
               {
                 directives: [
                   {
@@ -37389,7 +37395,7 @@ var render = function() {
                   }
                 ]
               },
-              [_vm._v("item-list4です")]
+              [_vm._v(_vm._s(_vm.MenuName))]
             ),
             _vm._v(" "),
             _c(
@@ -37411,7 +37417,7 @@ var render = function() {
                     key: index,
                     on: {
                       click: function($event) {
-                        _vm.msg = index
+                        ;(_vm.msg = index), (_vm.MenuName = item.name)
                       }
                     }
                   },
