@@ -5,12 +5,13 @@
                 <div class="card">
                     <div class="card-header">Menu List</div>
                     <div class="card-body">
-                        <p v-show="msg === 0">item-list1です</p>
-                        <p v-show="msg === 1">item-list2です</p>
-                        <p v-show="msg === 2">item-list3です</p>
-                        <p v-show="msg === 3">item-list4です</p>
+                        <div v-show="msg === 0">{{MenuName}}</div>
+                        <div v-show="msg === 1">{{MenuName}}</div>
+                        <div v-show="msg === 2">{{MenuName}}</div>
+                        <div v-show="msg === 3">{{MenuName}}</div>
+
                         <ul v-show="msg === '何をしますか？'">
-                            <li v-for="(item, index) in items" :key="index" @click="msg = index">
+                            <li v-for="(item, index) in items" :key="index" @click="msg = index, MenuName = item.name">
                                 {{ item.name }}
                             </li>
                         </ul>
@@ -27,11 +28,16 @@ export default {
     data: function() {
         return {
             msg: "何をしますか？",
+            MenuName: "",
             items: [
-                {name: "item-list1"},
-                {name: "item-list2"},
-                {name: "item-list3"},
-                {name: "item-list4"},
+                // ユーザー詳細から編集できるようにする
+                {name: "ユーザー情報詳細"},
+                // 入力時にリアルタイム表示。確認画面の表示
+                {name: "新規投稿"},
+                // ログインユーザーで絞り込み一覧表示
+                {name: "投稿内容確認"},
+                // 投稿内容から詳細画面に飛ばす
+                {name: "他ユーザー投稿確認"},
             ],
         }
     },
