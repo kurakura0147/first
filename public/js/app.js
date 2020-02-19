@@ -1932,7 +1932,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37338,65 +37337,21 @@ var render = function() {
           _c("div", { staticClass: "card-header" }, [_vm._v("Menu List")]),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.msg === 0,
-                    expression: "msg === 0"
-                  }
-                ]
-              },
-              [_vm._v(_vm._s(_vm.MenuName))]
-            ),
+            _vm.msg === 0
+              ? _c("div", [_vm._v(_vm._s(_vm.MenuName))])
+              : _vm._e(),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.msg === 1,
-                    expression: "msg === 1"
-                  }
-                ]
-              },
-              [_vm._v(_vm._s(_vm.MenuName))]
-            ),
+            _vm.msg === 1
+              ? _c("div", [_vm._v(_vm._s(_vm.MenuName))])
+              : _vm._e(),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.msg === 2,
-                    expression: "msg === 2"
-                  }
-                ]
-              },
-              [_vm._v(_vm._s(_vm.MenuName))]
-            ),
+            _vm.msg === 2
+              ? _c("div", [_vm._v(_vm._s(_vm.MenuName))])
+              : _vm._e(),
             _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.msg === 3,
-                    expression: "msg === 3"
-                  }
-                ]
-              },
-              [_vm._v(_vm._s(_vm.MenuName))]
-            ),
+            _vm.msg === 3
+              ? _c("div", [_vm._v(_vm._s(_vm.MenuName))])
+              : _vm._e(),
             _vm._v(" "),
             _c(
               "ul",
@@ -37417,23 +37372,34 @@ var render = function() {
                     key: index,
                     on: {
                       click: function($event) {
+                        $event.preventDefault()
                         ;(_vm.msg = index), (_vm.MenuName = item.name)
                       }
                     }
                   },
                   [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(item.name) +
-                        "\n                        "
-                    )
+                    _c("a", { attrs: { href: "/" } }, [
+                      _vm._v(_vm._s(item.name))
+                    ])
                   ]
                 )
               }),
               0
             ),
             _vm._v(" "),
-            _c("a", { attrs: { href: "/home" } }, [_vm._v("back")])
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    _vm.msg = "何をしますか？"
+                  }
+                }
+              },
+              [_vm._v("back")]
+            )
           ])
         ])
       ])

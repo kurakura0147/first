@@ -5,17 +5,16 @@
                 <div class="card">
                     <div class="card-header">Menu List</div>
                     <div class="card-body">
-                        <div v-show="msg === 0">{{MenuName}}</div>
-                        <div v-show="msg === 1">{{MenuName}}</div>
-                        <div v-show="msg === 2">{{MenuName}}</div>
-                        <div v-show="msg === 3">{{MenuName}}</div>
-
+                        <div v-if="msg === 0">{{MenuName}}</div>
+                        <div v-if="msg === 1">{{MenuName}}</div>
+                        <div v-if="msg === 2">{{MenuName}}</div>
+                        <div v-if="msg === 3">{{MenuName}}</div>
                         <ul v-show="msg === '何をしますか？'">
-                            <li v-for="(item, index) in items" :key="index" @click="msg = index, MenuName = item.name">
-                                {{ item.name }}
+                            <li v-for="(item, index) in items" :key="index" @click.prevent="msg = index, MenuName = item.name">
+                                <a href="/">{{ item.name }}</a>
                             </li>
                         </ul>
-                        <a href="/home">back</a>
+                        <a href="#" @click.prevent="msg='何をしますか？'">back</a>
                     </div>
                 </div>
             </div>
