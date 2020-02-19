@@ -1948,7 +1948,7 @@ __webpack_require__.r(__webpack_exports__);
         name: "投稿内容確認"
       }, // 投稿内容から詳細画面に飛ばす
       {
-        name: "他ユーザー投稿確認"
+        name: "その他"
       }]
     };
   },
