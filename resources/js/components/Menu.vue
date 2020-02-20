@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header">Menu List</div>
         <div class="card-body">
-          <ul v-show="msg === '何をしますか？'">
+          <ul v-show="msg === 'default'">
             <li>
             <router-link to="/users/show">ユーザー情報詳細</router-link>
             </li>
@@ -18,7 +18,7 @@
             <router-link to="">その他</router-link>
             </li>
           </ul>
-          <a href="#" @click.prevent="msg='何をしますか？'">back</a>
+          <a href="#" @click.prevent="msg='default'">back</a>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
 export default {
     data: function() {
         return {
-            msg: "何をしますか？",
+            msg: "default",
         }
     },
 
