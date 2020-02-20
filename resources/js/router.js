@@ -1,33 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import axios from 'axios';
 
 // ページコンポーネントをインポート
+
+// User
+import UserInformation from './components/pages/user/UserInformation.vue'
 import Login from './components/pages/Login.vue'
-import Menu from './components/pages/Menu.vue'
-import Book from './components/pages/Book.vue'
-import BookCreate from './components/pages/BookCreate.vue'
+
+// Book
+import Book from './components/pages/book/Book.vue'
+import BookCreate from './components/pages/book/BookCreate.vue'
 
 Vue.use(VueRouter)
+Vue.prototype.$axios = axios
 
 // パスとコンポーネントのマッピング
 const routes = [
-  {
-    // ログイン後のトップ画面
-    path: '/',
-    component: Menu,
-  },
+  // User関連
   {
     // ログイン画面
-    path: '/login',
-    component: Login,
+    path: '/users/show',
+    component: UserInformation,
   },
+
+  // Book関連
   {
-    // 本一覧
+    // Book一覧
     path: '/book',
     component: Book,
   },
   {
-    // 本新規投稿
+    // Book新規投稿
     path: '/book/create',
     component: BookCreate,
   },
