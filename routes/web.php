@@ -11,13 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home/index', 'BookController@index')->name('book.index');
+Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
