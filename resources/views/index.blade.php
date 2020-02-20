@@ -27,7 +27,14 @@
                 {{ config('app.name', 'Laravel') }}
             </a>
             <ul class="navbar-nav ml-auto">
-                右側
+                {{-- ログイン済 --}}
+                @auth
+                    {{ Auth::user() }}
+                @endauth
+                {{-- ログイン未 --}}
+                @guest
+                    Login
+                @endguest
             </ul>
         </div>
     </nav>
@@ -35,6 +42,5 @@
     <div id="app">
         {{-- ここにtemplateが入る予定 --}}
     </div>
-    <hr>
 </body>
 </html>
