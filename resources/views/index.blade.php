@@ -21,24 +21,6 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="margin-bottom:20px;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <ul class="navbar-nav ml-auto">
-                {{-- ログイン済 --}}
-                @auth
-                    {{ Auth::user() }}
-                @endauth
-                {{-- ログイン未 --}}
-                @guest
-                    Login
-                @endguest
-            </ul>
-        </div>
-    </nav>
-
     <div id="app">
         {{-- ここにtemplateが入る予定 --}}
     </div>
