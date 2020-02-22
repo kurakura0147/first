@@ -1,7 +1,9 @@
 <template>
   <div>
     <main>
+      
       <div class="card">
+        <!-- カードタイトル -->
         <div class="card-header">
           <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -19,6 +21,7 @@
           </ul>
         </div>
 
+        <!-- ログイン画面 -->
         <div class="card-body">
           <div class="form-group" v-show="tab === 1">
             <form  @submit.prevent="login">
@@ -36,30 +39,25 @@
             </form>
           </div>
 
-
+          <!-- 登録画面 -->
           <div class="form-group" v-show="tab === 2">
             <form @submit.prevent="register">
-
               <div class="form-group row">
                 <label for="InputName">Name</label>
                 <input type="text" class="form-control" id="InputName" v-model="registerForm.name" placeholder="Enter name">
               </div>
-
               <div class="form-group row">
                 <label for="InputEmail">Email</label>
                 <input type="text" class="form-control" id="InputEmail" v-model="registerForm.email" placeholder="Enter email">
               </div>
-
               <div class="form-group row">
                 <label for="InputPassword">Password</label>
                 <input type="password" class="form-control" id="InputPassword" v-model="registerForm.password" placeholder="Enter password">
               </div>
-
               <div class="form-group row">
                 <label for="confirmPassword">Password (confirm)</label>
                 <input type="password" class="form-control" id="confirmPassword" v-model="registerForm.password_confirmation" placeholder="Enter password">
               </div>
-
               <div class="form__button">
                 <button type="submit" class="btn btn-primary">register</button>
               </div>
