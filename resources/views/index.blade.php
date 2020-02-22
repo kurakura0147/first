@@ -21,20 +21,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="margin-bottom:20px;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <ul class="navbar-nav ml-auto">
-                右側
-            </ul>
-        </div>
-    </nav>
-
     <div id="app">
         {{-- ここにtemplateが入る予定 --}}
     </div>
-    <hr>
 </body>
 </html>
