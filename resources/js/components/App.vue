@@ -3,11 +3,7 @@
     <Nav />
     <main>
       <div class="container">
-        <div class="col-md-14">
-          <div class="card">
-          <RouterView />
-          </div>
-        </div>
+      <RouterView />
       </div>
     </main>
   </div>

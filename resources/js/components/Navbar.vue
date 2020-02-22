@@ -5,13 +5,12 @@
                 Laravel
             </a>
             <ul class="navbar-nav ml-auto">
-                <RouterLink class="button button--link" to="/login">
+                <RouterLink class="nav-item nav-link nav-item" to="/login">
                     Login / Register
-                  </RouterLink>
+                </RouterLink>
             </ul>
         </div>
-                            <button class="button button--link" @click="logout">Logout</button>
-
+        <button @click="logout">Logout</button>
     </nav>
 </template>
 

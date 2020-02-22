@@ -1,18 +1,12 @@
 <template>
-  <div>
-    <main>
-      <div class="card-header">Book一覧表示</div>
-      <div class="card-body">
-        {{ error }}
-        <ul>
-          <li v-for="book in books" :key="book">
-            {{ book }}
-          </li>
-        </ul>
-          <RouterView />
+    <div class="center-block">
+      <div class="card">
+        <div class="card-header">記事一覧</div>
+        <div class="card-body">
+          <p>{{ books }}</p>
+        </div>
       </div>
-    </main>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -26,7 +20,7 @@
         },
         mounted() {
             axios.get('/book')
-            .then(response => (this.books = response.data))
+            .then(response => (this.books = response))
             .catch(error => (this.error = error))
         }
     }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      
+    <div class="col-md-10 col-md-offset-1">
       <div class="card">
         <!-- カードタイトル -->
         <div class="card-header">
@@ -65,6 +65,7 @@
           </div>
         </div>
       </div>
+    </div>
     </main>
   </div>
 </template>
