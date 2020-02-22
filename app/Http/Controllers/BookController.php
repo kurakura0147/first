@@ -8,6 +8,10 @@ class BookController extends Controller
 {
     public function index()
     {
-        return "index";
+        // $books = [
+        //     "name" => "練習用",
+        // ];
+        $books = "れんしゅうです";
+        return $books;
     }
 }

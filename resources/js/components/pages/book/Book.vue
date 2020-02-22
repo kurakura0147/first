@@ -3,7 +3,12 @@
     <main>
       <div class="card-header">Book一覧表示</div>
       <div class="card-body">
-        
+        {{ error }}
+        <ul>
+          <li v-for="book in books" :key="book">
+            {{ book }}
+          </li>
+        </ul>
           <RouterView />
       </div>
     </main>
@@ -15,11 +20,14 @@
   export default {
         data(){
             return {
-                books: []
+                books: [],
+                error: [],
             }
         },
         mounted() {
-            axios.get('/book').then(response => this.books = response.data)
+            axios.get('/book')
+            .then(response => (this.books = response.data))
+            .catch(error => (this.error = error))
         }
     }
 
