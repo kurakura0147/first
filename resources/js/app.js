@@ -6,10 +6,16 @@ import store from './store'
 // ルートコンポーネントをインポート
 import App from './components/App.vue'
 
-new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App />'
-})
+const createApp = async () => {
+  await store.dispatch('auth/currentUser')
+
+  new Vue({
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App />'
+  })
+}
+
+createApp()

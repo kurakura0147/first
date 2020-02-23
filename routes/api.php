@@ -19,4 +19,4 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/book', 'BookController@index');
+Route::get('/user', fn() => Auth::user())->name('user');

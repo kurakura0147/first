@@ -1,12 +1,14 @@
 // 設定ファイルのインポート
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import axios from 'axios';
-
+import axios from 'axios'
+import store from './store'
 
 // ページコンポーネントをインポート
 // User
 import Login from './components/auth/Login.vue'
+import Menu from './components/Menu.vue'
+
 // Book
 import Book from './components/pages/book/Book.vue'
 import BookCreate from './components/pages/book/BookCreate.vue'
@@ -17,14 +19,23 @@ Vue.prototype.$axios = axios
 // パスとコンポーネントのマッピング
 const routes = [
 
-  {
-    path: '/',
-  },
   // User関連
   {
-    // ログイン画面
+    // ログイン・新規登録画面
     path: '/login',
     component: Login,
+    beforeEnter (to, from, next) {
+    if (store.getters['auth/check']) {
+      next('/')
+    } else {
+      next()
+    }
+  }
+  },
+  {
+    // ログイン後の画面
+    path: '/',
+    component: Menu,
   },
   // Book関連
   {

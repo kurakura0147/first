@@ -96,6 +96,8 @@ export default {
     },
     async login () {
       // authストアのloginアクションを呼び出す
+      // await = 非同期アクション完了後、次に移行
+      // dispatch = アクションの呼出.第１引数=アクション名
       await this.$store.dispatch('auth/login', this.loginForm)
       // トップページに移動する
       this.$router.push('/')
