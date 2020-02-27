@@ -2,14 +2,21 @@ import './bootstrap'
 import Vue from 'vue'
 // ルーティングの定義をインポート
 import router from './router'
+// storeの設定等をインポート
 import store from './store'
 // ルートコンポーネントをインポート
 import App from './components/App.vue'
 
-new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App />'
-})
+const createApp = async () => {
+  await store.dispatch('auth/currentUser')
+
+  new Vue({
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App />'
+  })
+}
+
+createApp()

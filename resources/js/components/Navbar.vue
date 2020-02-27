@@ -4,13 +4,11 @@
             <a class="navbar-brand" href="/">
                 Laravel
             </a>
-            <ul class="navbar-nav ml-auto">
-                <RouterLink class="button button--link" to="/login">
-                    Login / Register
-                  </RouterLink>
-            </ul>
+              <button v-if="isLogin" @click="logout" class="button button--link">Logout</button>
+              <RouterLink v-else class="nav-item nav-link nav-item" to="/login">
+                Login / Register
+              </RouterLink>
         </div>
-                            <button class="button button--link" @click="logout">Logout</button>
 
     </nav>
 </template>
@@ -24,6 +22,14 @@ export default {
 
       this.$router.push('/login')
     }
-  }
+  },
+  computed: {
+    isLogin (){
+      return this.$store.getters['auth/check']
+    },
+    username (){
+      return this.$store.getters['auth/username']
+    }
+  },
 }
 </script>

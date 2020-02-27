@@ -1,6 +1,6 @@
 <template>
-  <div class="row justify-content-center">
-    <div class="col-md-4">
+  <!-- <div class="row justify-content-center"> -->
+    <div class="center-block">
       <div class="card">
         <div class="card-header">Menu List</div>
         <div class="card-body">
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
