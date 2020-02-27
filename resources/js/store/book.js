@@ -1,44 +1,22 @@
 const state = {
-  isBoolean: false,
-  count: 10,
-  books: [
-    {
-      id: 1,
-      title: "test1",
-    },
-    {
-      id: 2,
-      title: "test2",
-    },
-    {
-      id: 3,
-      title: "test3",
-    },
-    {
-      id: 4,
-      title: "test4",
-    },
-  ]
+  books: null,
 }
 
 const getters = {
-  getStateIsBoolean: (state) => state.isBoolean,
-  squared: state => state.count,
 }
 
 const mutations = {
-  tttt(state) {
-    return state.isBoolean
+  setBook(state) {
+    state.books = "book"
   },
-
-  increment(state){
-    state.count = state.count + 1
-    console.log(state.count)
-    return state.count
-  }
 }
 
 const actions = {
+  async currentBook (context) {
+    const response = await axios.get('/api/book')
+    // const book = response.data
+    context.commit('setBook')
+  },
 }
 
 export default {
