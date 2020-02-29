@@ -1,28 +1,38 @@
-const state = {
-  books: null,
-}
+// const state = {
+//   books: [],
+// }
 
-const getters = {
-}
+// const getters = {
+// }
 
-const mutations = {
-  setBook(state) {
-    state.books = "book"
-  },
-}
+// const mutations = {
+//   setBook(state, book) {
+//     state.books = book
+//     console.log("book")
+//     console.log(state.books)
+//   },
+// }
 
-const actions = {
-  async currentBook (context) {
-    const response = await axios.get('/api/book')
-    // const book = response.data
-    context.commit('setBook')
-  },
-}
+// const actions = {
+//   async getBooks (context) {
+//     const response = await axios.get('/api/book')
+//     .then(
+//       (res) => {this.books = res.data}
+//     )
+//     console.log("response")
+//     console.log(response)
+//     this.books = response.data
+//     context.commit('setBook', books)
+//   },
+//   // created() {
+//   //   this.getBooks()
+//   // },
+// }
 
-export default {
-  namespaced: true,
-  state,
-  getters,
-  mutations,
-  actions
-}
+// export default {
+//   namespaced: true,
+//   state,
+//   getters,
+//   mutations,
+//   actions
+// }

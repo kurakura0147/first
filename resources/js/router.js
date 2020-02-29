@@ -10,7 +10,7 @@ import Login from './components/auth/Login.vue'
 import Menu from './components/Menu.vue'
 
 // Book
-import Book from './components/pages/book/Book.vue'
+import Book from './components/pages/book/BookList.vue'
 import BookCreate from './components/pages/book/BookCreate.vue'
 
 Vue.use(VueRouter)
@@ -40,7 +40,7 @@ const routes = [
   // Book関連
   {
     // Book一覧
-    path: '/book',
+    path: '/api/books',
     component: Book,
   },
   {
