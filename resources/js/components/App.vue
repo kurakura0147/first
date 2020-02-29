@@ -12,12 +12,10 @@
 
 <script>
 import Nav from './Navbar.vue'
-import Menu from './Menu.vue'
 
 export default {
   components: {
     Nav,
-    Menu,
   }
 }
 </script>
