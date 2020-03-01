@@ -22,7 +22,6 @@ class BookController extends Controller
     public function create(Request $request)
     {
         $book = new Book();
-
         $book->title = $request->title;
         $book->user_id = 1;
         $book->save();
