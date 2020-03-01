@@ -21,4 +21,11 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/user', fn() => Auth::user())->name('user');
 
-Route::post('/book', 'BookController@index')->name('book.index');
+// 記事一覧
+Route::get('/books', 'BookController@index')->name('book.index');
+// 記事投稿
+Route::post('/books/create', 'BookController@create')->name('book.create');
+
+// Route::group(['middleware' => 'api'], function() {
+//   Route::get('/book', 'BookController@index');
+// });

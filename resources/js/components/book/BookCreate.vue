@@ -3,13 +3,13 @@
       <div class="card">
         <div class="card-header">記事投稿</div>
         <div class="card-body">
-					<form  @submit.prevent="bookCreate">
+					<form>
 						<div class="form-group row">
 							<label for="BookCreate">title</label>
-								<input type="text" class="form-control" id="BookCreate" v-model="bookForm.title" placeholder="Enter title">
+								<input type="text" class="form-control" id="BookCreate" v-model="book.title" placeholder="Enter title">
 						</div>
 						<div class="form__button">
-							<button type="submit" class="btn btn-primary">New</button>
+							<button @click="bookCreate" type="submit" class="btn btn-primary">New</button>
 						</div>
 					</form>
         </div>
@@ -21,17 +21,17 @@
 export default {
 	data(){
 		return {
-			bookForm: {
+			book: {
 				title: "",
 				user_id: 1,
 			},
 		}
 	},
   methods: {
-    async create () {
-      await this.$store.dispatch('/book/create', this.bookForm)
-      // トップページに移動する
-      this.$router.push('/book')
+    async bookCreate () {
+			const response = await axios.post('/api/books/create', book)
+			console.log(response)
+      // this.$router.push('/api/book')
     },
 	}
 }
