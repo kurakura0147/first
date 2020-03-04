@@ -4,7 +4,6 @@
     <main>
       <div class="container">
       <RouterView />
-      <router-link to="/">back</router-link>
       </div>
     </main>
   </div>

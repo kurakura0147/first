@@ -1,8 +1,9 @@
 <template>
-  <li>
-    Title:{{ item.title }}
+  <ul>
+    <li>ID:{{item.id}}</li>
+    <li>Title:{{ item.title }}</li>
     <hr>
-  </li>
+  </ul>
 </template>
 <script>
 export default {
@@ -15,7 +16,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

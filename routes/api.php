@@ -24,8 +24,4 @@ Route::get('/user', fn() => Auth::user())->name('user');
 // 記事一覧
 Route::get('/books', 'BookController@index')->name('book.index');
 // 記事投稿
-Route::post('/books/create', 'BookController@create')->name('book.create');
-
-// Route::group(['middleware' => 'api'], function() {
-//   Route::get('/book', 'BookController@index');
-// });
+Route::post('/setBook', 'BookController@create')->name('book.create');

@@ -1,38 +1,51 @@
 <template>
-    <div class="center-block">
-      <div class="card">
-        <div class="card-header">記事投稿</div>
-        <div class="card-body">
-					<form>
-						<div class="form-group row">
-							<label for="BookCreate">title</label>
-								<input type="text" class="form-control" id="BookCreate" v-model="book.title" placeholder="Enter title">
-						</div>
-						<div class="form__button">
-							<button @click="bookCreate" type="submit" class="btn btn-primary">New</button>
-						</div>
-					</form>
-        </div>
-      </div>
-    </div>
+	<div class="center-block">
+		<div class="card">
+			<div class="card-header">記事投稿</div>
+			<div class="card-body">
+				<form>
+					<div class="form-group row">
+						{{ title }}
+						<input type="text" class="form-control" v-model="title" placeholder="Enter title">
+					</div>
+					<div class="form__button">
+						<button v-on:click.prevent="addBook" type="submit" class="btn btn-primary">New</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<hr>
+		<BookList></BookList>
+	</div>
 </template>
 
 <script>
+import Menu from '../Menu.vue'
+import BookList from './BookList.vue'
 export default {
+	components: {
+		Menu,
+		BookList,
+	},
 	data(){
 		return {
-			book: {
-				title: "",
-				user_id: 1,
-			},
+			title: "",
+			user_id: "",
 		}
 	},
   methods: {
-    async bookCreate () {
-			const response = await axios.post('/api/books/create', book)
-			console.log(response)
-      // this.$router.push('/api/book')
-    },
+		addBook(){
+			axios.post('/api/setBook',{
+				title: this.title,
+				user_id: this.$store.getters['auth/userid'],
+			})
+			.then(response => {
+				console.log(response)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		},
 	}
 }
 </script>
