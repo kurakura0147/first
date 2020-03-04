@@ -43,7 +43,7 @@ const routes = [
   },
   {
     // Book新規投稿
-    path: '/api/books/create',
+    path: '/api/create',
     component: BookCreate,
   },
 ]

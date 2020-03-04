@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="center-block">
+      <Menu></Menu>
+      <hr>
       <div class="card">
         <div class="card-header">記事一覧</div>
         <div class="card-body">
@@ -14,9 +16,11 @@
 
 <script>
 import Book from './Book.vue'
+import Menu from '../Menu.vue'
 export default {
   components: {
     Book,
+    Menu,
   },
   data(){
     return{

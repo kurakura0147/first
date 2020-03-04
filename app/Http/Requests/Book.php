@@ -23,8 +23,8 @@ class Book extends FormRequest
      */
     public function rules()
     {
-        return [
-            'book' => 'required',
-        ];
+        // return [
+        //     'book' => 'required',
+        // ];
     }
 }
