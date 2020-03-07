@@ -1971,9 +1971,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1999,7 +1996,7 @@ __webpack_require__.r(__webpack_exports__);
       }],
       msg: "default",
       login_name: this.$store.getters['auth/username'],
-      login_check: this.login_name !== '' ? true : false
+      login_check: this.$store.getters['auth/username'] === '' ? true : false
     };
   }
 });
@@ -2055,7 +2052,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$store.dispatch('auth/logout');
 
               case 2:
-                _this.$router.push('/login');
+                _this.$router.push('/');
 
               case 3:
               case "end":
@@ -2201,7 +2198,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 // トップページに移動する
-                _this.$router.push('/');
+                _this.$router.push('/top');
 
               case 3:
               case "end":
@@ -2226,7 +2223,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 // トップページに移動する
-                _this2.$router.push('/');
+                _this2.$router.push('/top');
 
               case 3:
               case "end":
@@ -39330,7 +39327,7 @@ var render = function() {
               "\n      こんにちは、" + _vm._s(_vm.login_name) + "さん\n    "
             )
           ]),
-          _vm._v("\n    " + _vm._s(_vm.login_check) + "\n    "),
+          _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c(
               "ul",
@@ -39402,7 +39399,7 @@ var render = function() {
                 "RouterLink",
                 {
                   staticClass: "nav-item nav-link nav-item",
-                  attrs: { to: "/login" }
+                  attrs: { to: "/" }
                 },
                 [_vm._v("\n            Login / Register\n          ")]
               )
@@ -56810,18 +56807,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$axios = axios__WEBPACK_IMP
 var routes = [// User関連
 {
   // ログイン・新規登録画面
-  path: '/login',
+  path: '/',
   component: _components_auth_Login_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     if (_store__WEBPACK_IMPORTED_MODULE_3__["default"].getters['auth/check']) {
-      next('/');
+      next('/top');
     } else {
       next();
     }
   }
 }, {
   // ログイン後の画面
-  path: '/',
+  path: '/top',
   component: _components_Menu_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }, // Book関連
 {

@@ -5,7 +5,7 @@
                 Laravel
             </a>
               <button v-if="isLogin" @click="logout" class="button button--link">Logout</button>
-              <RouterLink v-else class="nav-item nav-link nav-item" to="/login">
+              <RouterLink v-else class="nav-item nav-link nav-item" to="/">
                 Login / Register
               </RouterLink>
         </div>
@@ -19,8 +19,7 @@ export default {
   methods: {
     async logout () {
       await this.$store.dispatch('auth/logout')
-
-      this.$router.push('/login')
+      this.$router.push('/')
     }
   },
   computed: {

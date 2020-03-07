@@ -20,11 +20,11 @@ const routes = [
   // User関連
   {
     // ログイン・新規登録画面
-    path: '/login',
+    path: '/',
     component: Login,
     beforeEnter (to, from, next) {
       if (store.getters['auth/check']) {
-        next('/')
+        next('/top')
       } else {
         next()
       }
@@ -32,7 +32,7 @@ const routes = [
   },
   {
     // ログイン後の画面
-    path: '/',
+    path: '/top',
     component: Menu,
   },
   // Book関連

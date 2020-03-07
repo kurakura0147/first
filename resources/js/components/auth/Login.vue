@@ -94,7 +94,7 @@ export default {
       // authストアのresigterアクションを呼び出す
       await this.$store.dispatch('auth/register', this.registerForm)
       // トップページに移動する
-      this.$router.push('/')
+      this.$router.push('/top')
     },
     async login () {
       // authストアのloginアクションを呼び出す
@@ -102,7 +102,7 @@ export default {
       // dispatch = アクションの呼出.第１引数=アクション名
       await this.$store.dispatch('auth/login', this.loginForm)
       // トップページに移動する
-      this.$router.push('/')
+      this.$router.push('/top')
     },
   },
 }
