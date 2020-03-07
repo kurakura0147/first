@@ -24,8 +24,6 @@ class BookController extends Controller
         $book = new Book();
         $book->title = $request->get('title');
         $book->user_id= $request->get('user_id');
-        var_dump($request);
         $book->save();
     }
-
 }

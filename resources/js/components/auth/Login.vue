@@ -10,12 +10,14 @@
               <a
                 class="nav-link"
                 @click="tab = 1"
+                v-bind:class="[ tab === 1 ? 'selected_tab' : '' ]"
               >Login</a>
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
                 @click="tab = 2"
+                v-bind:class="[ tab === 2 ? 'selected_tab' : '' ]"
               >Register</a>
             </li>
           </ul>
@@ -105,3 +107,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .selected_tab{
+    background-color: #3490dc;
+    color: antiquewhite;
+  };
+</style>
