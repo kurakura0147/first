@@ -1,7 +1,9 @@
 <template>
   <ul>
-    <li>ID:{{item.id}}</li>
-    <li>Title:{{ item.title }}</li>
+    <div>Title:{{ item.title }}</div>
+    <div v-if="user_id === current_userid">
+      <router-link to="/api/delete">delete</router-link>
+    </div>
     <hr>
   </ul>
 </template>
@@ -16,3 +18,6 @@ export default {
   }
 }
 </script>
+<style scoped>
+  ul{float: left;}
+</style>
