@@ -2,14 +2,11 @@
   <div class="center-block" v-if="login_check">
     <Login></Login>
   </div>
-
-
   <div class="center-block" v-else>
     <div class="card">
       <div class="card-header" >
         こんにちは、{{login_name}}さん
       </div>
-      {{ login_check }}
       <div class="card-body">
         <ul>
           <li v-for="(menu, index) in menus" :key=index>
@@ -38,7 +35,7 @@ export default {
         ],
         msg: "default",
         login_name: this.$store.getters['auth/username'],
-        login_check: this.login_name !== ''?true:false,
+        login_check: this.$store.getters['auth/username'] === ''?true:false,
 
     }
   },
